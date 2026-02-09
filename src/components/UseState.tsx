@@ -1,9 +1,14 @@
-import {use, useEffect, useState } from "react"
+import {useMemo , useEffect, useState } from "react"
+import { intialItems } from "./Utils";
+
 
 
 export default function UseState(){
     const[count,setCount]=useState(0);
+    const[items]=useState(intialItems)
 
+
+    const selectedItems=useMemo(()=>items.find((item)=>item.isSelected),[items])
 
     useEffect(()=>{
     console.log("component rerendered");
@@ -21,6 +26,7 @@ export default function UseState(){
             <button onClick={()=>setCount((count)=>count+1)}>Increment</button>
             <button onClick={()=>setCount((count)=>count-1)}>Decrement</button>
             <button onClick={()=>setCount(0)}>Reset</button>
+            <h1>selectedItems:{selectedItems?.id}</h1>
         </div>
     )
 }
