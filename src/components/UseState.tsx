@@ -1,7 +1,13 @@
-import {useMemo , useEffect, useState } from "react"
+import {useContext,useMemo , useEffect, useState, createContext } from "react"
 import { intialItems } from "./Utils";
+import Component1 from "./Component1";
 
 
+
+
+export const userContext=createContext<string>("")
+
+const user="sumanth"
 
 export default function UseState(){
     const[count,setCount]=useState(0);
@@ -27,6 +33,9 @@ export default function UseState(){
             <button onClick={()=>setCount((count)=>count-1)}>Decrement</button>
             <button onClick={()=>setCount(0)}>Reset</button>
             <h1>selectedItems:{selectedItems?.id}</h1>
+            <userContext.Provider value={user}>
+            <Component1/>
+            </userContext.Provider>
         </div>
     )
 }
