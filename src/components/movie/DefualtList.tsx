@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 
+const API_KEY = import.meta.env.VITE_API_KEY;
 
 type Movie = {
   id: number;
@@ -20,7 +21,7 @@ export default function(){
 
   async function getMovies(){
     try {
-        const res=await fetch("https://api.themoviedb.org/3/discover/movie?api_key=f43ec82a5f24fe6190891894b7436c7a",
+        const res=await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}`,
        { headers:{
             "content-type":"application/json",
             },
