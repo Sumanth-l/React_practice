@@ -1,4 +1,4 @@
-import {useContext,useMemo , useEffect, useState, createContext, useRef } from "react"
+import {useContext,useMemo , useEffect, useState, createContext, useRef, useReducer } from "react"
 import { intialItems } from "./Utils";
 import Component1 from "./Component1";
 
@@ -9,7 +9,32 @@ export const userContext=createContext<string>("")
 
 const user="sumanth"
 
+interface State{
+    count:number,
+    error:string | null
+}
+
+interface Action{
+  type:'increment' | 'decrement'
+}
+
+function reducer(state:State,action:Action){
+
+    const {type}=action;
+
+    switch(type){
+        default:
+            return state;
+    }
+}
+
 export default function UseState(){
+
+
+    const[state,dispatch]=useReducer(reducer,{
+        count:0,
+        error:null, 
+    })
 
     const countRef=useRef(0);
 

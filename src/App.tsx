@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import UseState from './components/UseState'
+import DefualtList from './components/movie/DefualtList'
 
 function App() {
 
@@ -8,7 +9,8 @@ function App() {
 
   return (
     <>
-    <UseState/>
+    {/* <UseState/> */}
+    <DefualtList/>  
     </>
   )
 }
