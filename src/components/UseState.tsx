@@ -1,8 +1,20 @@
-import { useState } from "react"
+import {use, useEffect, useState } from "react"
 
 
 export default function UseState(){
     const[count,setCount]=useState(0);
+
+
+    useEffect(()=>{
+    console.log("component rerendered");
+
+    //optional return function 
+
+    return()=>{
+        console.log("iam being cleanedup")
+    }
+    }) //dependency array
+
     return(
         <div>
             <p>count : {count}</p>
