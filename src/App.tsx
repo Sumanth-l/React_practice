@@ -6,6 +6,8 @@ import Movie from './components/movie/Movie'
 import SearchQuery from './components/movie/SearchQuery'
 import Login from './components/Redux/Login'
 import Profile from './components/Redux/Profile'
+import ChangeColor from './components/Redux/ChangeColor'
+
 
 function App() {
 
@@ -15,8 +17,10 @@ function App() {
     <>
     {/* <UseState/>
     <SearchQuery/> */}
-    <Login/>
+   
     <Profile/>
+     <Login/>
+     <ChangeColor/>
     </>
   )
 }
