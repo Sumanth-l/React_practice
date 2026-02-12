@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-
+import '../../App.css'
 const API_KEY = import.meta.env.VITE_API_KEY;
 
 type Movie = {

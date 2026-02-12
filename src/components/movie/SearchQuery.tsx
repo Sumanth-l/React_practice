@@ -1,6 +1,7 @@
 import { useState } from "react"
 import DefualtList from "./DefualtList";
 import Movie from "./Movie";
+import '../../App.css'
 
 const API_KEY=import.meta.env.VITE_API_KEY;
 
